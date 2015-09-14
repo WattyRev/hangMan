@@ -1,9 +1,9 @@
-app.controller('mainCtrl', ['$scope', '$rootScope', function($scope, $root) {
+app.controller('mainCtrl', ['$scope', '$rootScope', '$http', function($scope, $root, $http) {
 
     //Variables
-        $scope.word = 'bittitan';
         $scope.guesses = [];
         $scope.failures = 0;
+        $scope.letters = [];
 
     //Functions
         $scope.input = function(letter) {
@@ -28,8 +28,12 @@ app.controller('mainCtrl', ['$scope', '$rootScope', function($scope, $root) {
         };
         $scope.newGame = function() {
             $scope.guesses = [];
-            $scope.failures = '';
+            $scope.failures = 0;
             $scope.gameOver = false;
+            $scope.getWord().then(function(response) {
+                $scope.word = response.data.toLowerCase().substring(0, response.data.length-2);
+                $scope.setLetters();
+            });
         };
         $scope.setLetters = function() {
             $scope.letters = $scope.word.split('');
@@ -43,16 +47,19 @@ app.controller('mainCtrl', ['$scope', '$rootScope', function($scope, $root) {
             });
         };
         $scope.youLose = function() {
-            $scope.gameOver = 'You LOSE!';
+            $scope.gameOver = 'You LOSE! The word was ' + $scope.word;
         };
         $scope.youWin = function() {
             $scope.gameOver = 'You WIN!!!';
+        };
+        $scope.getWord = function() {
+            return $http.get('http://randomword.setgetgo.com/get.php');
         };
 
         function init() {
             console.log($scope);
             var functions = [
-                $scope.setLetters
+                $scope.newGame,
             ];
             $.each(functions, function(i, fn) {
                 fn();

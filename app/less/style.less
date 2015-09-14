@@ -1,3 +1,9 @@
+@white: #fff;
+@black: #000;
+@gray: #cdcdcd;
+@blue: #4F4FFF;
+
+
 * {
     margin:0;
     padding:0;
@@ -5,6 +11,9 @@
 html {
     font-size: 14px;
     font-family: sans-serif;
+}
+body {
+    padding: 20px;
 }
 .clear {
     display:block;
@@ -24,8 +33,9 @@ html {
     display: inline-block;
     width:20px;
     margin: 0 10px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid @black;
     height: 30px;
+    text-transform: capitalize;
 }
 [ng-click] {
     cursor:pointer;
@@ -35,6 +45,11 @@ html {
     cursor: default;
 }
 keyboard-dir {
+    display:block;
+    margin-top:20px;
+    border-top:1px solid @gray;
+    padding-top:15px;
+
     div {
         text-align:center;
     }
@@ -42,7 +57,50 @@ keyboard-dir {
         width:8%;
         display:inline-block;
         padding: 2% 0;
-        border: 1px solid #000;
+        border: 1px solid @gray;
         margin: 2px .5%;
+        text-transform: capitalize;
+        background: @blue;
+        color: @white;
     }
+}
+svg {
+    max-height: 50vh;
+}
+button {
+    display:block;
+    border: 0;
+    background: @blue;
+    color: @white;
+    padding: 5px 10px;
+}
+.lightbox {
+    &:before {
+        position:fixed;
+        content:'';
+        background: @black;
+        opacity: .3;
+        height: 100%;
+        width: 100%;
+        top:0;
+        left:0;
+    }
+
+    .content {
+        position: fixed;
+        background: @white;
+        border-radius: 10px;
+        border: 1px solid @gray;
+        top: 30%;
+        left:50%;
+        width: 300px;
+        margin-left: -150px;
+        padding: 30px;
+        text-align:center;
+
+        button {
+            margin: 15px auto;
+        }
+    }
+
 }

@@ -6,6 +6,9 @@ html {
   font-size: 14px;
   font-family: sans-serif;
 }
+body {
+  padding: 20px;
+}
 .clear {
   display: block;
 }
@@ -22,8 +25,9 @@ html {
   display: inline-block;
   width: 20px;
   margin: 0 10px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #000000;
   height: 30px;
+  text-transform: capitalize;
 }
 [ng-click] {
   cursor: pointer;
@@ -32,6 +36,12 @@ html {
   opacity: .3;
   cursor: default;
 }
+keyboard-dir {
+  display: block;
+  margin-top: 20px;
+  border-top: 1px solid #cdcdcd;
+  padding-top: 15px;
+}
 keyboard-dir div {
   text-align: center;
 }
@@ -39,6 +49,44 @@ keyboard-dir span {
   width: 8%;
   display: inline-block;
   padding: 2% 0;
-  border: 1px solid #000;
+  border: 1px solid #cdcdcd;
   margin: 2px .5%;
+  text-transform: capitalize;
+  background: #4f4fff;
+  color: #ffffff;
+}
+svg {
+  max-height: 50vh;
+}
+button {
+  display: block;
+  border: 0;
+  background: #4f4fff;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+.lightbox:before {
+  position: fixed;
+  content: '';
+  background: #000000;
+  opacity: .3;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.lightbox .content {
+  position: fixed;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #cdcdcd;
+  top: 30%;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  padding: 30px;
+  text-align: center;
+}
+.lightbox .content button {
+  margin: 15px auto;
 }
