@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 14px;
+  font-family: sans-serif;
+}
+.clear {
+  display: block;
+}
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.characters {
+  text-align: center;
+  font-size: 32px;
+}
+.character {
+  display: inline-block;
+  width: 20px;
+  margin: 0 10px;
+  border-bottom: 1px solid #000;
+  height: 30px;
+}
+[ng-click] {
+  cursor: pointer;
+}
+[disabled] {
+  opacity: .3;
+  cursor: default;
+}
+keyboard-dir div {
+  text-align: center;
+}
+keyboard-dir span {
+  width: 8%;
+  display: inline-block;
+  padding: 2% 0;
+  border: 1px solid #000;
+  margin: 2px .5%;
+}

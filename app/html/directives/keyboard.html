@@ -1,0 +1,3 @@
+<div ng-repeat="row in keys">
+    <span ng-repeat="key in row" ng-disabled="isDisabled(key)" ng-click="!isDisabled(key) && input(key)">{{key}}</span>
+</div>

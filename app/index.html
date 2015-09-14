@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="hangman">
+    <head>
+        <title>Hangman</title>
+        <link rel="stylesheet" href="css/style.css" />
+
+        <!-- injector:js -->
+        <script src="/js/bower_components/angular/angular.min.js"></script>
+        <script src="/js/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/js/app.js"></script>
+        <script src="/js/controllers/main.js"></script>
+        <script src="/js/directives/keyboard.js"></script>
+        <!-- endinjector -->
+    </head>
+    <body ng-controller="mainCtrl">
+        <h1>Failed Guesses Remaining: {{9 - failures}}</h1>
+
+        <div class="characters">
+            <div class="character" ng-repeat="letter in letters"><span ng-if="letter.guessed()">{{letter.digit}}</span></div>
+        </div>
+
+        <keyboard-dir data-click="input" disabled-keys="guesses"></keyboard-dir>
+
+        <div class="gameOver" ng-show="gameOver">
+            {{gameOver}}
+            <button ng-click="newGame()">Start new game</button>
+        </div>
+    </body>
+</html>
