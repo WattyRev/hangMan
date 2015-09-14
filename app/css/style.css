@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Arcade Classic';
+  src: url('../fonts/arcade_classic.ttf');
+}
+@font-face {
+  font-family: 'True Lies';
+  src: url('../fonts/true_lies.ttf');
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +14,6 @@ html {
   font-size: 14px;
   font-family: sans-serif;
 }
-body {
-  padding: 20px;
-}
 .clear {
   display: block;
 }
@@ -16,6 +21,23 @@ body {
   content: "";
   display: block;
   clear: both;
+}
+.top-wrapper {
+  background-image: url('../resources/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 25px;
+}
+h1 {
+  text-align: center;
+  padding-top: 15px;
+}
+h1 .true-lies {
+  font-family: 'True Lies';
+}
+h1 .arcade-classic {
+  font-family: 'Arcade Classic';
 }
 .characters {
   text-align: center;
@@ -38,7 +60,6 @@ body {
 }
 keyboard-dir {
   display: block;
-  margin-top: 20px;
   border-top: 1px solid #cdcdcd;
   padding-top: 15px;
 }

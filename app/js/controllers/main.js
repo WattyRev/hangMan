@@ -57,7 +57,6 @@ app.controller('mainCtrl', ['$scope', '$rootScope', '$http', function($scope, $r
         };
 
         function init() {
-            console.log($scope);
             var functions = [
                 $scope.newGame,
             ];

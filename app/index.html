@@ -13,23 +13,26 @@
         <!-- endinjector -->
     </head>
     <body ng-controller="mainCtrl">
-        <svg id="hang" viewBox="0 0 612 792">
-            <polygon ng-disabled="failures < 1" class="piece1" fill="#6b4210" points="56.8,581.3 95.8,581.3 158.2,499.3 217.2,581.3 251.8,581.3 179.2,474.3 140.8,474.3 "/>
-            <polygon ng-disabled="failures < 1" class="piece1" fill="#6b4210" points="140.8,474.3 140.8,128 179,149.5 179.2,474.3 "/>
-            <circle ng-disabled="failures < 1" class="piece1" cx="158" cy="486" r="6.5"/>
-            <polygon ng-disabled="failures < 2" class="piece2" fill="#6b4210" points="140.8,128 529,128 529,149.5 179,149.5 "/>
-            <polygon ng-disabled="failures < 2" class="piece2" fill="#6b4210" points="244.5,149.5 179.2,214 179,225.5 256.5,149.5 "/>
-            <rect ng-disabled="failures < 3" id="rope" class="piece3" x="453.3" y="149.5" class="st0" width="4.5" height="93.5"/>
-            <circle ng-disabled="failures < 4" id="head" class="piece4" cx="455.5" cy="243" r="29"/>
-            <path ng-disabled="failures < 5" id="vody" class="piece5" d="M445,270l-14,109.5c0,0,25,13,53.5,0L466,270H445z"/>
-            <ellipse ng-disabled="failures < 6" id="left-arm" class="piece6" transform="matrix(-0.9466 0.3223 -0.3223 -0.9466 1025.7058 443.1249)" class="st0" cx="476.2" cy="306.5" rx="3.2" ry="25.8"/>
-            <ellipse ng-disabled="failures < 7" id="right-arm" class="piece-7" transform="matrix(0.9466 0.3223 -0.3223 0.9466 122.8601 -123.5945)" class="st0" cx="434.7" cy="309.3" rx="3.2" ry="25.8"/>
-            <ellipse ng-disabled="failures < 8" id="left-leg" class="piece8" transform="matrix(0.9968 -7.974523e-002 7.974523e-002 0.9968 -30.9001 38.8764)" class="st0" cx="471.3" cy="406.3" rx="4" ry="35.5"/>
-            <ellipse ng-disabled="failures < 9" id="right-leg" class="piece9" transform="matrix(-0.9968 -7.974523e-002 7.974523e-002 -0.9968 855.9037 842.7947)" class="st0" cx="444.8" cy="404.3" rx="4" ry="35.5"/>
-        </svg>
+        <div class="top-wrapper">
+            <h1><span class="true-lies">Hangman</span> <span class="arcade-classic">Online</span></h1>
+            <svg id="hang" viewBox="0 0 612 792">
+                <polygon ng-disabled="failures < 1" class="piece1" fill="#6b4210" points="56.8,581.3 95.8,581.3 158.2,499.3 217.2,581.3 251.8,581.3 179.2,474.3 140.8,474.3 "/>
+                <polygon ng-disabled="failures < 1" class="piece1" fill="#6b4210" points="140.8,474.3 140.8,128 179,149.5 179.2,474.3 "/>
+                <circle ng-disabled="failures < 1" class="piece1" cx="158" cy="486" r="6.5"/>
+                <polygon ng-disabled="failures < 2" class="piece2" fill="#6b4210" points="140.8,128 529,128 529,149.5 179,149.5 "/>
+                <polygon ng-disabled="failures < 2" class="piece2" fill="#6b4210" points="244.5,149.5 179.2,214 179,225.5 256.5,149.5 "/>
+                <rect ng-disabled="failures < 3" id="rope" class="piece3" x="453.3" y="149.5" class="st0" width="4.5" height="93.5"/>
+                <circle ng-disabled="failures < 4" id="head" class="piece4" cx="455.5" cy="243" r="29"/>
+                <path ng-disabled="failures < 5" id="vody" class="piece5" d="M445,270l-14,109.5c0,0,25,13,53.5,0L466,270H445z"/>
+                <ellipse ng-disabled="failures < 6" id="left-arm" class="piece6" transform="matrix(-0.9466 0.3223 -0.3223 -0.9466 1025.7058 443.1249)" class="st0" cx="476.2" cy="306.5" rx="3.2" ry="25.8"/>
+                <ellipse ng-disabled="failures < 7" id="right-arm" class="piece-7" transform="matrix(0.9466 0.3223 -0.3223 0.9466 122.8601 -123.5945)" class="st0" cx="434.7" cy="309.3" rx="3.2" ry="25.8"/>
+                <ellipse ng-disabled="failures < 8" id="left-leg" class="piece8" transform="matrix(0.9968 -7.974523e-002 7.974523e-002 0.9968 -30.9001 38.8764)" class="st0" cx="471.3" cy="406.3" rx="4" ry="35.5"/>
+                <ellipse ng-disabled="failures < 9" id="right-leg" class="piece9" transform="matrix(-0.9968 -7.974523e-002 7.974523e-002 -0.9968 855.9037 842.7947)" class="st0" cx="444.8" cy="404.3" rx="4" ry="35.5"/>
+            </svg>
 
-        <div class="characters">
-            <div class="character" ng-repeat="letter in letters"><span ng-if="letter.guessed()">{{letter.digit}}</span></div>
+            <div class="characters">
+                <div class="character" ng-repeat="letter in letters"><span ng-if="letter.guessed()">{{letter.digit}}</span></div>
+            </div>
         </div>
 
         <keyboard-dir data-click="input" disabled-keys="guesses"></keyboard-dir>
